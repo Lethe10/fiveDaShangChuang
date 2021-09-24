@@ -9,7 +9,62 @@
 </head>
 
 <body>
-    <div>这是一个分支</div>
+    <script>
+        var shoesNavDate = [{
+            id: 1,
+            src: './../date/date-images/shoe-images/shoeNav1.jpg',
+            describe: '爱路思行李箱女24寸铝框拉杆箱男万向轮旅行箱20/22/26/29英寸大容量学生密码箱皮箱登机箱 瑰',
+            price: 188.00
+        }, {
+            id: 2,
+            src: './../date/date-images/shoe-images/shoeNav2.jpg',
+            describe: '小米（MI）拉杆箱青春版旅行箱20/24寸男女箱万向轮密码箱轻巧便携出差旅行拉杆箱 黄色 20英寸',
+            price: 199.00
+        }, {
+            id: 3,
+            src: './../date/date-images/shoe-images/shoeNav3.jpg',
+            describe: 'WMNS Air Jordan 13 aj13 鳄鱼皮纹理 女鞋篮球鞋 - AQ1757 004',
+            price: 1200.00
+        }, {
+            id: 4,
+            src: './../date/date-images/shoe-images/shoeNav4.jpg',
+            describe: '小米米家铝镁合金旅行箱拉杆箱 男女万向轮登机行李箱 20英寸',
+            price: 899.00
+        }, {
+            id: 5,
+            src: './../date/date-images/shoe-images/shoeNav5.jpg',
+            describe: 'COACH/蔻驰女士拼色HUTTON钱包 灰褐姜色',
+            price: 1899.00
+        }, ];
+
+        function paixu(data, prop) {
+            var temp = [];
+            for (var i = 0; i < data.length; i++) {
+                var tempobj = {};
+                for (var key in data[i]) {
+                    tempobj[key] = data[i][key];
+                };
+                temp.push(tempobj);
+            };
+            for (var i = 0; i < temp.length; i++) {
+                for (var j = i; j < temp.length; j++) {
+                    if (temp[i][prop] > temp[j][prop]) {
+                        [temp[i], temp[j]] = [temp[j], temp[i]]
+                    }
+                }
+            }
+            return temp;
+        };
+        var newData = paixu(shoesNavDate, 'price');
+        var a = 10;
+        var b = 100;
+        var temp;
+        temp = a; //10
+        a = b; //100
+        b = temp; //10
+        console.log(a);
+        console.log(b);
+    </script>
 </body>
 
 </html>
